@@ -1,13 +1,3 @@
-# Python Game
-
-## 1. 환경설정 & 프레임
-```
-    - pip install pygame
-    - 1_create_frame.py file 생성
-```
-<pre>
-<code>
-# 1_create_frame.py
 import pygame
 
 pygame.init() # 초기화 (반드시 필요)
@@ -20,6 +10,9 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 # 화면 타이틀 설정
 pygame.display.set_caption("Chocolat Game") # 게임 이름
 
+# 배경 이미지 불러오기
+background = pygame.image.load("C:/Users/SunghunLee/Documents/Python/python_module/pygame_basic/background.png")
+
 # 이벤트 루프
 running = True # 게임이 진행중인가?
 
@@ -28,20 +21,10 @@ while running:
         if event.type == pygame.QUIT:   # 창이 닫히는 이벤트가 발생하였는가?
             running = False # 게임이 진행중이 아님.
 
+    # screen.fill((0, 0, 255))    # R, G, B 색 채우기
+    screen.blit(background, (0, 0)) # 배경 그리기
+    
+    pygame.display.update() # 게임화면을 다시 그리기!
+
 # pygame 종료
 pygame.quit()
-</code>
-</pre>
-
-## 2. 배경
-```
-    - 2_background.py file 생성
-    - background = pygame.image.load("path") # 배경 이미지 불러오기
-    - screen.blit(background, (0, 0)) # 배경 그리기
-    - pygame.display.update() # 게임화면을 다시 그리기
-```
-
-## 3. 캐릭터
-```
-    -
-```
