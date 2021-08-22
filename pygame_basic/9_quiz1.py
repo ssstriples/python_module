@@ -1,4 +1,5 @@
 import pygame
+import os
 from random import *
 
 #####################################################################################
@@ -18,10 +19,11 @@ clock = pygame.time.Clock()
 #####################################################################################
 
 # 1. 사용자 게임 초기화 (배경화면, 게임 이미지, 좌표, 속도, 폰트 등)
-background = pygame.image.load("C:/Users/lsh76/chocolaWorkspace/python_module/pygame_basic/background.png")
+sourceFileDir = os.path.dirname(os.path.abspath(__file__))
+background = pygame.image.load(os.path.join(sourceFileDir, "background.png"))
 
 # 캐릭터(스프라이트) 불러오기
-character = pygame.image.load("C:/Users/lsh76/chocolaWorkspace/python_module/pygame_basic/character.png")
+character = pygame.image.load(os.path.join(sourceFileDir, "character.png"))
 character_size = character.get_rect().size  # 이미지의 크기를 구해옴
 character_width = character_size[0]     # 캐릭터의 가로 크기
 character_height = character_size[1]    # 캐릭터의 세로 크기
@@ -35,7 +37,7 @@ to_x = 0
 character_speed = 0.6
 
 # 똥 만들기
-enemy = pygame.image.load("C:/Users/lsh76/chocolaWorkspace/python_module/pygame_basic/enemy.png")
+enemy = pygame.image.load(os.path.join(sourceFileDir, "enemy.png"))
 enemy_size = enemy.get_rect().size
 enemy_width = enemy_size[0]
 enemy_height = enemy_size[1]
